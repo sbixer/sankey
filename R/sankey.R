@@ -86,7 +86,7 @@ draw.nodes <- function(x, width = 0.2) {
       pos = nodes$pos[n],
       adj = c(nodes$adjx[n], nodes$adjy[n]),
       cex = nodes$cex[n],
-      offset = 0.2,
+      offset = nodes$offset[n],
       xpd = NA
     )
   }
