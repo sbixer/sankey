@@ -2,7 +2,7 @@
 #' @importFrom graphics lines polygon
 
 curveseg <- function(x0, x1, y0, y1, width = 1, nsteps = 50,
-                     colorstyle, col = "#ffcc0066", grad = NULL, lty = 1,
+                     colorstyle, col = "#ffcc0066", grad = NULL, lty = 0,
                      curvestyle = c("sin", "line")) {
 
   curvestyle <- match.arg(curvestyle)
@@ -34,7 +34,7 @@ curveseg <- function(x0, x1, y0, y1, width = 1, nsteps = 50,
       col = grad[i], border = grad[i]
     )
 
-    lines(c(xx[i], xx[i + 1]), c(yy[i], yy[i + 1]), lty = edges$lty)
-    lines(c(xx[i], xx[i + 1]), c(yy[i] + w, yy[i + 1] + w ), lty = edges$lty)
+    lines(c(xx[i], xx[i + 1]), c(yy[i], yy[i + 1]), lty = lty)
+    lines(c(xx[i], xx[i + 1]), c(yy[i] + w, yy[i + 1] + w ), lty = lty)
   }
 }
