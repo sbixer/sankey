@@ -64,7 +64,12 @@ draw.nodes <- function(x, width = 0.2) {
     if (nodes$shape[n] == "point") {
       points(nodes$x[n], nodes$center[n], pch = 19, col = nodes$col[n])
 
-    } else if (nodes$shape[n] == "rectangle") {
+    } else if (nodes$shape[n] == "rightarrow") {
+      points(nodes$x[n], nodes$center[n], pch = -9658, col = nodes$col[n],cex=nodes$nodesizes[n])
+      
+    } else if (nodes$shape[n] == "leftarrow") {
+      points(nodes$x[n], nodes$center[n], pch = -9668, col = nodes$col[n],cex=nodes$nodesizes[n])
+    } else (nodes$shape[n] == "rectangle") {
       rect(
         nodes$x[n] - nodes$boxw[n] / 2, nodes$bottom[n],
         nodes$x[n] + nodes$boxw[n] / 2, nodes$top[n],
